@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\EventModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
-class EventsController extends BaseController
+class EventController extends BaseController
 {
     protected $model;
     
@@ -53,7 +53,7 @@ class EventsController extends BaseController
         
         try {
             // Insert using Query Builder through Model
-            if ($this->model->insert($data) === false) {
+            if ($this->model->insert($validData) === false) {
                 throw new \RuntimeException('Failed to save event');
             }
             
